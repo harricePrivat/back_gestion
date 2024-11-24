@@ -58,7 +58,7 @@ router.post('/get-student',async (req,res)=>{
                 date_naissace: Req.naissance,
                 niveau: Req.niveau,
                 numero_cin: Req.cin,
-                path_images: `http://192.168.43.41:3000/Images/${req.file.filename}`,
+                path_images: `http://192.168.43.223:3000/Images/${req.file.filename}`,
               });
           }catch(error){
             console.log("Voici l'erreur",error)
@@ -71,7 +71,7 @@ router.post('/get-student',async (req,res)=>{
                     date_naissace: Req.naissance,
                     niveau: Req.niveau,
                     numero_cin: Req.cin,
-                    path_images: `http://192.168.43.41:3000/Images/${req.file.filename}`,
+                    path_images: `http://192.168.43.223:3000/Images/${req.file.filename}`,
                   });
             }catch(e){
                 console.log("Voici l'erreur",e)
