@@ -28,12 +28,13 @@ const storage = multer.diskStorage({
   const upload = multer({ storage });
   
 
-router.get('/get-student',async (req,res)=>{
-  const Req=req.query.niveau
+router.post('/get-student',async (req,res)=>{
+  const Req=req.body
+  console.log(req.body)
   const result= await User.findAll(
     {
       where:{
-        niveau:Req
+        niveau:Req.niveau
       }
     }
   )
