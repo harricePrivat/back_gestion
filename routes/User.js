@@ -5,6 +5,10 @@ const path = require('path')
 const User= require('../models/User')
 
 
+
+
+
+
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
       // Destination du fichier
@@ -23,6 +27,21 @@ const storage = multer.diskStorage({
   
   const upload = multer({ storage });
   
+
+router.get('/get-student',async (req,res)=>{
+  const Req=req.query.niveau
+  const result= await User.findAll(
+    {
+      where:{
+        niveau:Req
+      }
+    }
+  )
+  res.json(result)
+})
+
+
+
   // Utiliser le middleware upload.single pour gérer un seul fichier
   router.post("/create-user", upload.single("image"), async (req, res) => {
      const Req = req.body;
