@@ -12,6 +12,11 @@ const User= sequelize.define('User',{
         allowNull: false,
         unique: false
     },
+    anneeBacc:{
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: false
+    },
     date_naissace:{
         type: DataTypes.DATE,
         allowNull: false
@@ -23,7 +28,15 @@ const User= sequelize.define('User',{
         type: DataTypes.INTEGER,
         allowNull: false
     },
-    path_images:{
+    path_images_cin:{
+        type: DataTypes.STRING,
+        allowNull:false,
+        unique: false
+    },path_images_student:{
+        type: DataTypes.STRING,
+        allowNull:false,
+        unique: false
+    },path_images_note:{
         type: DataTypes.STRING,
         allowNull:false,
         unique: false
